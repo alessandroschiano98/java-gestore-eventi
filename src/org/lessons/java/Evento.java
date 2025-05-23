@@ -61,7 +61,7 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Evento: " + titolo + " - Data: " + data + " - Posti: " + numeroPostiPrenotati + "/" + numeroPostiTotale;
+        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: " + numeroPostiPrenotati + "/" + numeroPostiTotale;
     }
 
 }
