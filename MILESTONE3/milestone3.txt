@@ -1,0 +1,13 @@
+Modulo corrente: JAVA Fundamentals e OOP
+
+java-gestore-eventi
+
+In questo modulo avete imparato le basi di Java e i primi concetti della programmazione orientata agli oggetti (OOP). Avrete riconosciuto molti costrutti già visti in JavaScript, come variabili, condizionali e cicli, ma con una nuova sintassi. In più, avete scoperto aspetti tipici di Java, come le classi, gli oggetti, i costruttori e molto altro. Ora sapete come organizzare il codice in modo più strutturato e potete iniziare a creare semplici applicazioni seguendo i principi dell’OOP.
+
+Dettaglio del piano:
+- dal 24/05 a 31/05 sarà attiva la fase di Mentoring durante la quale non ci saranno lezioni in diretta, ma 
+ogni sessione sarà dedicata al supporto allo svolgimento della prova;
+
+- dal 03/06 riprendono le lezioni con il nuovo modulo;
+
+- il 14/07 è il termine ultimo per consegnare la prova e sostenere il 1to1 di revisione;
