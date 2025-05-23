@@ -35,19 +35,10 @@ public Evento(String titolo, int data, int numeroPostiTotale, int numeroPostiPre
         return this.numeroPostiTotale;
     }
 
-    public void setNumeroPostiTotale(int numeroPostiTotale) {
-        this.numeroPostiTotale = numeroPostiTotale;
-    }
 
     public int getNumeroPostiPrenotati() {
         return this.numeroPostiPrenotati;
     }
-
-    public void setNumeroPostiPrenotati(int numeroPostiPrenotati) {
-        this.numeroPostiPrenotati = numeroPostiPrenotati;
-    }
-
-
 
 
 }
