@@ -9,23 +9,21 @@ public class Main {
         Evento eventoTechno = new Evento("TechnoMilano2047", LocalDate.of(2025, 8, 15), 1000, 0);
 
         Scanner scanner = new Scanner(System.in);
-        // ! EVENTO DA INSERIRE(UTENTE):
-        System.out.println("Inserisci un nuovo evento (non usare spazi)");
+        
+        // ! Inserimento evento da parte dell’utente
+        System.out.println("Inserisci un nuovo evento:");
         String titolo = scanner.nextLine();
-        if (titolo.contains(" ")) {
-            System.out.println("Errore: non inserire spazi fra le parole");
-            return;
-        }
+
         System.out.println("L'evento che hai appena inserito è: " + titolo.toUpperCase());
-        // ! PRENOTAZIONI DA EFFETTUARE(UTENTE):
+
+        // !  Prenotazioni da effettuare
         System.out.println("Quante prenotazioni vuoi effettuare?");
         int numeroPostiPrenotati = scanner.nextInt();
         System.out.println("Il numero di prenotazioni inserite è: " + numeroPostiPrenotati);
-        // ! MESSAGGIO EVENTO(RIEPILOGO):
+
+        // ! Riepilogo evento predefinito
         System.out.println(eventoTechno.toString());
 
         scanner.close();
-
     }
-
 }
