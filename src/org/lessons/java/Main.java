@@ -1,13 +1,17 @@
 package org.lessons.java;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Evento eventoTechno = new Evento("TechnoMilano2025", LocalDate.of(2025, 8, 15), 1000, 0);
-        Evento eventoHouse = new Evento("HouseTorino2026", LocalDate.of(2026, 5, 18), 1000, 0);
-        Evento eventoEDM = new Evento("EDMNapoli2024", LocalDate.of(2024, 4, 11), 1000, 0);
+        Concerto eventoTechno = new Concerto("TechnoMilano2025", LocalDate.of(2025, 8, 15), 1000, 0,
+                LocalTime.of(12, 30), 25.00f);
+        Concerto eventoHouse = new Concerto("HouseTorino2026", LocalDate.of(2026, 5, 18), 1000, 0, LocalTime.of(11, 30),
+                25.00f);
+        Concerto eventoEDM = new Concerto("EDMNapoli2024", LocalDate.of(2024, 4, 11), 1000, 0, LocalTime.of(12, 00),
+                25.00f);
 
         // Riepilogo eventi
         System.out.println("Eventi disponibili:");

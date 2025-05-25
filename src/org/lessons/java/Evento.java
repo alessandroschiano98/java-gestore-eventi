@@ -2,13 +2,13 @@ package org.lessons.java;
 
 import java.time.LocalDate;
 
-public class Evento {
+public abstract class Evento {
     private String titolo;
     private LocalDate data;
     private int numeroPostiTotale;
     private int numeroPostiPrenotati;
 
-    public Evento(String titolo, LocalDate data, int numeroPostiTotale, int numeroPostiPrenotati) {
+    public Evento(String titolo, LocalDate data, int numeroPostiTotale) {
         this.titolo = titolo;
         this.data = data;
         this.numeroPostiTotale = numeroPostiTotale;
