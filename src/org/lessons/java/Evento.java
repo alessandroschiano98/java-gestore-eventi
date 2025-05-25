@@ -43,20 +43,27 @@ public class Evento {
         if (LocalDate.now().isAfter(data)) {
             throw new IllegalStateException("L'evento è già passato, non è possibile prenotare.");
         }
-        if (numeroPostiPrenotati >= numeroPostiTotale) {
+        else if (numeroPostiPrenotati >= numeroPostiTotale) {
             throw new IllegalStateException("Posti esauriti.");
         }
+        else {
         numeroPostiPrenotati++;
+        System.out.println("La prenotazione è stata effettuata con successo");
+        }
     }
 
     public void disdici() {
-        if (LocalDate.now().isAfter(data)) {
+        if (LocalDate.now().isBefore(data)) {
             throw new IllegalStateException("L'evento è già passato, non è possibile disdire.");
         }
-        if (numeroPostiPrenotati <= 0) {
+        else if (numeroPostiPrenotati <= 0) {
             throw new IllegalStateException("Nessuna prenotazione da disdire.");
         }
+        {
         numeroPostiPrenotati--;
+        System.out.println("La prenotazione effettuata è stata disdetta con");
+
+        }
     }
 
     @Override
