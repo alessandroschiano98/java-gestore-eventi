@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Evento eventoTechno = new Evento("TechnoMilano2047", LocalDate.of(2025, 8, 15), 1000, 0);
-        Evento eventoHouse = new Evento("HouseMTorino2047", LocalDate.of(2026, 5, 18), 1000, 0);
-        Evento eventoEDM = new Evento("EDMTorino2047", LocalDate.of(2024, 4, 11), 1000, 0);
+        Evento eventoTechno = new Evento("TechnoMilano2025", LocalDate.of(2025, 8, 15), 1000, 0);
+        Evento eventoHouse = new Evento("HouseTorino2026", LocalDate.of(2026, 5, 18), 1000, 0);
+        Evento eventoEDM = new Evento("EDMNapoli2024", LocalDate.of(2024, 4, 11), 1000, 0);
 
         // Riepilogo eventi
         System.out.println("Eventi disponibili:");
@@ -17,8 +17,8 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // ! Scelta dell'evento
-        System.out.println("\nQuale evento vuoi selezionare? (1 = Techno, 2 = House, 3= EDM)");
+        // ! Scelta dell'evento da prenotare
+        System.out.println("\nQuale evento vuoi selezionare? (1 = Techno, 2 = House, 3 = EDM)");
         int sceltaEvento = scanner.nextInt();
 
         Evento eventoSelezionato;
@@ -48,9 +48,14 @@ public class Main {
             }
         }
 
-        // ! Riepilogo finale
-        System.out.println("\nRiepilogo finale:");
+        // ! Riepilogo finale (prenotazioni)
+        System.out.println("\nRiepilogo finale:".toUpperCase());
         System.out.println(eventoSelezionato.toString());
 
         scanner.close();
+
+        // ! Prenotazioni da disdire
+        System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + "?");
+
+
     }}

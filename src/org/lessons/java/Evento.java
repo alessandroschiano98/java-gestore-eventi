@@ -38,7 +38,7 @@ public class Evento {
     public int getNumeroPostiPrenotati() {
         return this.numeroPostiPrenotati;
     }
-
+// ! PRENOTA
     public void prenota() {
         if (LocalDate.now().isAfter(data)) {
             throw new IllegalStateException("L'evento è già passato, non è possibile prenotare.");
@@ -51,7 +51,7 @@ public class Evento {
         System.out.println("La prenotazione è stata effettuata con successo");
         }
     }
-
+// ! DISDICI 
     public void disdici() {
         if (LocalDate.now().isBefore(data)) {
             throw new IllegalStateException("L'evento è già passato, non è possibile disdire.");
@@ -68,7 +68,7 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: " + numeroPostiPrenotati + "/" + numeroPostiTotale;
+        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: " + "[" + numeroPostiPrenotati + "/" + numeroPostiTotale + "]";
     }
 
 }
