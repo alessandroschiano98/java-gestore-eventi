@@ -48,12 +48,12 @@ public class Evento {
         }
         else {
         numeroPostiPrenotati++;
-        System.out.println("La prenotazione è stata effettuata con successo");
+        System.out.println("<[La prenotazione è stata effettuata con successo]>");
         }
     }
 // ! DISDICI 
     public void disdici() {
-        if (LocalDate.now().isBefore(data)) {
+        if (LocalDate.now().isAfter(data)) {
             throw new IllegalStateException("L'evento è già passato, non è possibile disdire.");
         }
         else if (numeroPostiPrenotati <= 0) {
@@ -61,7 +61,7 @@ public class Evento {
         }
         {
         numeroPostiPrenotati--;
-        System.out.println("La prenotazione effettuata è stata disdetta con");
+        System.out.println("<[La prenotazione effettuata è stata disdetta con successo]>");
 
         }
     }

@@ -52,10 +52,22 @@ public class Main {
         System.out.println("\nRiepilogo finale:".toUpperCase());
         System.out.println(eventoSelezionato.toString());
 
-        scanner.close();
-
         // ! Prenotazioni da disdire
         System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + "?");
+        int numeroPostiDisdetti = scanner.nextInt();
 
+        for (int i = 0; i < numeroPostiDisdetti; i++) {
+            try {
+                eventoSelezionato.disdici();
+            } catch (IllegalStateException e) {
+                System.out.println("Errore durante la disdetta: " + e.getMessage());
+                break;
+            }
+        }
+        System.out.println("\nRiepilogo finale:".toUpperCase());
+        System.out.println(eventoSelezionato.toString());
 
-    }}
+        scanner.close();
+
+    }
+}
