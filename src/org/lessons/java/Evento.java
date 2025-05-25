@@ -38,37 +38,37 @@ public class Evento {
     public int getNumeroPostiPrenotati() {
         return this.numeroPostiPrenotati;
     }
-// ! PRENOTA
+
+    // ! PRENOTA
     public void prenota() {
         if (LocalDate.now().isAfter(data)) {
             throw new IllegalStateException("L'evento è già passato, non è possibile prenotare.");
-        }
-        else if (numeroPostiPrenotati >= numeroPostiTotale) {
+        } else if (numeroPostiPrenotati >= numeroPostiTotale) {
             throw new IllegalStateException("Posti esauriti.");
-        }
-        else {
-        numeroPostiPrenotati++;
-        System.out.println("<[La prenotazione è stata effettuata con successo]>");
+        } else {
+            numeroPostiPrenotati++;
+            System.out.println("<[La prenotazione è stata effettuata con successo]>");
         }
     }
-// ! DISDICI 
+
+    // ! DISDICI
     public void disdici() {
         if (LocalDate.now().isAfter(data)) {
             throw new IllegalStateException("L'evento è già passato, non è possibile disdire.");
-        }
-        else if (numeroPostiPrenotati <= 0) {
+        } else if (numeroPostiPrenotati <= 0) {
             throw new IllegalStateException("Nessuna prenotazione da disdire.");
         }
         {
-        numeroPostiPrenotati--;
-        System.out.println("<[La prenotazione effettuata è stata disdetta con successo]>");
+            numeroPostiPrenotati--;
+            System.out.println("<[La prenotazione effettuata è stata disdetta con successo]>");
 
         }
     }
 
     @Override
     public String toString() {
-        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: " + "[" + numeroPostiPrenotati + "/" + numeroPostiTotale + "]";
+        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: " + "[" + numeroPostiPrenotati + "/"
+                + numeroPostiTotale + "]";
     }
 
 }
