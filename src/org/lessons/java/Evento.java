@@ -70,4 +70,6 @@ public abstract class Evento {
                 + numeroPostiTotale + "]";
     }
 
+    
+
 }

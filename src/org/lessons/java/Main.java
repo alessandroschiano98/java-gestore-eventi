@@ -3,17 +3,18 @@ package org.lessons.java;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
         Concerto eventoTechno = new Concerto("TechnoMilano2025", LocalDate.of(2025, 8, 15), 1000, 0,
-                LocalTime.of(12, 30), 25.00f);
+                LocalTime.of(12, 30), new BigDecimal(25.00));
         Concerto eventoHouse = new Concerto("HouseTorino2026", LocalDate.of(2026, 5, 18), 1000, 0, LocalTime.of(11, 30),
-                25.00f);
+                new BigDecimal(25.00));
         Concerto eventoEDM = new Concerto("EDMNapoli2024", LocalDate.of(2024, 4, 11), 1000, 0, LocalTime.of(12, 00),
-                25.00f);
+                new BigDecimal(25.00));
 
-        // Riepilogo eventi
+        // ! Lista eventi:
         System.out.println("Eventi disponibili:");
         System.out.println("1. " + eventoTechno.toString());
         System.out.println("2. " + eventoHouse.toString());
@@ -21,7 +22,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // ! Scelta dell'evento da prenotare
+        // ! Scelta dell'evento da prenotare:
         System.out.println("\nQuale evento vuoi selezionare? (1 = Techno, 2 = House, 3 = EDM)");
         int sceltaEvento = scanner.nextInt();
 
@@ -39,8 +40,8 @@ public class Main {
             return;
         }
 
-        // ! Prenotazioni
-        System.out.println("Quante prenotazioni vuoi effettuare per: " + eventoSelezionato.getTitolo() + "?");
+        // ! Prenotazioni:
+        System.out.println("Quante prenotazioni vuoi effettuare per: " + eventoSelezionato.getTitolo() + " " + "?");
         int numeroPostiPrenotati = scanner.nextInt();
 
         for (int i = 0; i < numeroPostiPrenotati; i++) {
@@ -52,28 +53,40 @@ public class Main {
             }
         }
 
-        // ! Riepilogo finale (prenotazioni)
-        System.out.println("\nRiepilogo finale:".toUpperCase());
-        System.out.println(eventoSelezionato.toString());
+        // ! Riepilogo (prenotazioni):
+        System.out.println("\nRiepilogo prenotazione:".toUpperCase());
+        System.out.println("Evento: " + eventoSelezionato.getTitolo() + " - Data: " + eventoSelezionato.getData()
+                + " - PostiPrenotati: " + "[" + eventoSelezionato.getNumeroPostiPrenotati() + "/"
+                + eventoSelezionato.getNumeroPostiTotale() + "]");
 
-        // ! Prenotazioni da disdire
-        System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + "?");
-        int numeroPostiDisdetti = scanner.nextInt();
+        // ! Possibilità di disdire/confermare la prenotazione:
+        System.out.println(
+                "\nPrenotazione completata. Vuoi disdire qualche prenotazione? (digita 'disdici' per procedere oppure 'conferma' per terminare)");
+        scanner.nextLine();
+        String sceltaUtente = scanner.nextLine().trim().toLowerCase();
 
-        for (int i = 0; i < numeroPostiDisdetti; i++) {
-            try {
-                eventoSelezionato.disdici();
-            } catch (IllegalStateException e) {
-                System.out.println("Errore durante la disdetta: " + e.getMessage());
-                break;
+        if (sceltaUtente.equals("disdici")) {
+            System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + "?");
+            int numeroPostiDisdetti = scanner.nextInt();
+
+            for (int i = 0; i < numeroPostiDisdetti; i++) {
+                try {
+                    eventoSelezionato.disdici();
+                } catch (IllegalStateException e) {
+                    System.out.println("Errore durante la disdetta: " + e.getMessage());
+                    break;
+                }
             }
+            System.out.println("\nRiepilogo finale:".toUpperCase());
+            System.out.println(eventoSelezionato.toString());
+
+        } else {
+            System.out.println("Prenotazioni confermate. Nessuna disdetta effettuata.");
+            System.out.println("\nRiepilogo finale:");
+            System.out.println(eventoSelezionato.toString());
         }
-        System.out.println("\nRiepilogo finale:".toUpperCase());
-        System.out.println(eventoSelezionato.toString());
 
-        // ! Prenotazione finale con info aggiuntive(concerto)
-
-
+        // ! Riepilogo finale:
 
         scanner.close();
 
