@@ -82,11 +82,11 @@ public class Main {
 
         } else {
             System.out.println("Prenotazioni confermate. Nessuna disdetta effettuata.");
-            System.out.println("\nRiepilogo finale:");
+            System.out.println("\nRiepilogo finale:".toUpperCase());
             System.out.println(eventoSelezionato.toString());
         }
 
-        // ! Riepilogo finale:
+    
 
         scanner.close();
 
