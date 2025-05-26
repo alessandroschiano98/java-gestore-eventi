@@ -71,6 +71,10 @@ public class Main {
         System.out.println("\nRiepilogo finale:".toUpperCase());
         System.out.println(eventoSelezionato.toString());
 
+        // ! Prenotazione finale con info aggiuntive(concerto)
+
+
+
         scanner.close();
 
     }

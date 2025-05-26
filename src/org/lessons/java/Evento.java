@@ -57,8 +57,7 @@ public abstract class Evento {
             throw new IllegalStateException("L'evento è già passato, non è possibile disdire.");
         } else if (numeroPostiPrenotati <= 0) {
             throw new IllegalStateException("Nessuna prenotazione da disdire.");
-        }
-        {
+        } else {
             numeroPostiPrenotati--;
             System.out.println("<[La prenotazione effettuata è stata disdetta con successo]>");
 
