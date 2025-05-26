@@ -72,8 +72,8 @@ public class Main {
             for (int i = 0; i < numeroPostiDisdetti; i++) {
                 try {
                     eventoSelezionato.disdici();
-                } catch (IllegalStateException e) {
-                    System.out.println("Errore durante la disdetta: " + e.getMessage());
+                } catch (IllegalStateException errore) {
+                    System.out.println("Errore durante la disdetta: " + errore.getMessage());
                     break;
                 }
             }
