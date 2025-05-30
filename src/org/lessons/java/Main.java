@@ -47,8 +47,8 @@ public class Main {
         for (int i = 0; i < numeroPostiPrenotati; i++) {
             try {
                 eventoSelezionato.prenota();
-            } catch (IllegalStateException e) {
-                System.out.println("Errore durante la prenotazione: " + e.getMessage());
+            } catch (IllegalStateException errore) {
+                System.out.println("Errore durante la prenotazione: " + errore.getMessage());
                 break;
             }
         }
