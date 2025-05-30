@@ -70,8 +70,8 @@ public class Evento {
     }
 
     public String toStringBase() {
-        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: [" +
-                numeroPostiPrenotati + "/" + numeroPostiTotale + "]";
+        return "Evento: " + getTitolo() + " - Data: " + getData() + " - PostiPrenotati: [" +
+                getNumeroPostiPrenotati() + "/" + getNumeroPostiTotale() + "]";
     }
 
 }

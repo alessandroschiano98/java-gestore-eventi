@@ -41,7 +41,7 @@ public class Main {
         }
 
         // ! Prenotazioni:
-        System.out.println("Quante prenotazioni vuoi effettuare per: " + eventoSelezionato.getTitolo() + " " + "?");
+        System.out.println("Quante prenotazioni vuoi effettuare per: " + eventoSelezionato.getTitolo() + " " + " ?");
         int numeroPostiPrenotati = scanner.nextInt();
 
         for (int i = 0; i < numeroPostiPrenotati; i++) {
@@ -64,7 +64,7 @@ public class Main {
         String sceltaUtente = scanner.nextLine().trim().toLowerCase();
 
         if (sceltaUtente.equals("disdici")) {
-            System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + "?");
+            System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + " ?");
             int numeroPostiDisdetti = scanner.nextInt();
 
             for (int i = 0; i < numeroPostiDisdetti; i++) {
