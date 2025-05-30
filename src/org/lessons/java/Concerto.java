@@ -39,7 +39,7 @@ public class Concerto extends Evento {
         DateTimeFormatter oraFormattata = DateTimeFormatter.ofPattern("HH:mm");
 
         return super.toString() + " | Data: " + getData().format(dataFormattata) + " | Ora: "
-                + ora.format(oraFormattata) + " | Prezzo: $" + String.format("%.2f", prezzo);
+                + getOra().format(oraFormattata) + " | Prezzo: $" + String.format("%.2f", prezzo);
     }
 
 }
