@@ -2,7 +2,7 @@ package org.lessons.java;
 
 import java.time.LocalDate;
 
-public abstract class Evento {
+public class Evento {
     private String titolo;
     private LocalDate data;
     private int numeroPostiTotale;
