@@ -66,10 +66,12 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: " + "[" + numeroPostiPrenotati + "/"
-                + numeroPostiTotale + "]";
+        return toStringBase();
     }
 
-    
+    public String toStringBase() {
+        return "Evento: " + titolo + " - Data: " + data + " - PostiPrenotati: [" +
+                numeroPostiPrenotati + "/" + numeroPostiTotale + "]";
+    }
 
 }

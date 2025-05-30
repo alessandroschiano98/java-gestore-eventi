@@ -55,9 +55,7 @@ public class Main {
 
         // ! Riepilogo (prenotazioni):
         System.out.println("\nRiepilogo prenotazione:".toUpperCase());
-        System.out.println("Evento: " + eventoSelezionato.getTitolo() + " - Data: " + eventoSelezionato.getData()
-                + " - PostiPrenotati: " + "[" + eventoSelezionato.getNumeroPostiPrenotati() + "/"
-                + eventoSelezionato.getNumeroPostiTotale() + "]");
+        System.out.println(eventoSelezionato.toStringBase());
 
         // ! Possibilità di disdire/confermare la prenotazione:
         System.out.println(
