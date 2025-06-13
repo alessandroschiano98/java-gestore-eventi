@@ -1,5 +1,4 @@
 
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
@@ -58,33 +57,35 @@ public class Main {
         System.out.println(eventoSelezionato.toStringBase());
 
         // ! Possibilità di disdire/confermare la prenotazione:
-        System.out.println(
-                "\nPrenotazione completata. Vuoi disdire qualche prenotazione? (digita 'disdici' per procedere oppure 'conferma' per terminare)");
+        System.out.println("\nPrenotazione completata. Vuoi disdire qualche prenotazione? (digita 'disdici' per procedere oppure 'conferma' per terminare)");
         scanner.nextLine();
         String sceltaUtente = scanner.nextLine().trim().toLowerCase();
 
-        if (sceltaUtente.equals("disdici")) {
-            System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + " ?");
-            int numeroPostiDisdetti = scanner.nextInt();
+        switch (sceltaUtente) {
+            case "disdici":
+                System.out.println("\nQuante prenotazioni vuoi disdire per: " + eventoSelezionato.getTitolo() + " ?");
+                int numeroPostiDisdetti = scanner.nextInt();
 
-            for (int i = 0; i < numeroPostiDisdetti; i++) {
-                try {
-                    eventoSelezionato.disdici();
-                } catch (IllegalStateException errore) {
-                    System.out.println("Errore durante la disdetta: " + errore.getMessage());
-                    break;
+                for (int i = 0; i < numeroPostiDisdetti; i++) {
+                    try {
+                        eventoSelezionato.disdici();
+                    } catch (IllegalStateException errore) {
+                        System.out.println("Errore durante la disdetta: " + errore.getMessage());
+                        break;
+                    }
                 }
-            }
-            System.out.println("\nRiepilogo finale:".toUpperCase());
-            System.out.println(eventoSelezionato.toString());
 
-        } else {
-            System.out.println("Prenotazioni confermate. Nessuna disdetta effettuata.");
-            System.out.println("\nRiepilogo finale:".toUpperCase());
-            System.out.println(eventoSelezionato.toString());
+                System.out.println("\nRiepilogo finale:".toUpperCase());
+                System.out.println(eventoSelezionato.toString());
+                break;
+
+            case "conferma":
+            default:
+                System.out.println("Prenotazioni confermate. Nessuna disdetta effettuata.");
+                System.out.println("\nRiepilogo finale:".toUpperCase());
+                System.out.println(eventoSelezionato.toString());
+                break;
         }
-
-    
 
         scanner.close();
 
