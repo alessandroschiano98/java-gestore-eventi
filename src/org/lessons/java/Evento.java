@@ -1,5 +1,4 @@
 
-
 import java.time.LocalDate;
 
 public class Evento {
@@ -65,11 +64,8 @@ public class Evento {
     }
 
     @Override
-    public String toString() {
-        return toStringBase();
-    }
 
-    public String toStringBase() {
+    public String toString() {
         return "Evento: " + getTitolo() + " - Data: " + getData() + " - PostiPrenotati: [" +
                 getNumeroPostiPrenotati() + "/" + getNumeroPostiTotale() + "]";
     }

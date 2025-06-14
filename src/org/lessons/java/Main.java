@@ -54,7 +54,7 @@ public class Main {
 
         // ! Riepilogo (prenotazioni):
         System.out.println("\nRiepilogo prenotazione:".toUpperCase());
-        System.out.println(eventoSelezionato.toStringBase());
+        System.out.println(eventoSelezionato.toString());
 
         // ! Possibilità di disdire/confermare la prenotazione:
         System.out.println("\nPrenotazione completata. Vuoi disdire qualche prenotazione? (digita 'disdici' per procedere oppure 'conferma' per terminare)");

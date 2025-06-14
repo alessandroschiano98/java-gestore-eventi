@@ -1,11 +1,12 @@
 
-
 import java.time.LocalTime;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Concerto extends Evento {
+    private static final DateTimeFormatter dataFormattata = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final DateTimeFormatter oraFormattata = DateTimeFormatter.ofPattern("HH:mm");
     private LocalTime ora;
     private BigDecimal prezzo;
 
@@ -35,8 +36,6 @@ public class Concerto extends Evento {
 
     @Override
     public String toString() {
-        DateTimeFormatter dataFormattata = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        DateTimeFormatter oraFormattata = DateTimeFormatter.ofPattern("HH:mm");
 
         return super.toString() + " | Data: " + getData().format(dataFormattata) + " | Ora: "
                 + getOra().format(oraFormattata) + " | Prezzo: $" + String.format("%.2f", prezzo);
